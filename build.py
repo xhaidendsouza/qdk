@@ -270,7 +270,7 @@ def use_python_env(folder):
 
 
 if npm_install_needed:
-    command = [npm_cmd, "install"]
+    command = [npm_cmd, "install", "--loglevel", "silly"]
     if not args.optional_dependencies:
         command.append("--omit")
         command.append("optional")
