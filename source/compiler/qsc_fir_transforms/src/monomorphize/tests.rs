@@ -2008,14 +2008,14 @@ fn cross_package_non_intrinsic_generic_specializes() {
             function MappedByIndex_Int___Int__Int__(mapper : ((Int, Int) -> (Int, Int)), array : Int[]) : (Int, Int)[] {
                 mutable mapped : (Int, Int)[] = [];
                 {
-                    let _range_id_45755 : Range = 0..Length(array) - 1;
-                    mutable _index_id_45758 : Int = _range_id_45755::Start;
-                    let _step_id_45763 : Int = _range_id_45755::Step;
-                    let _end_id_45768 : Int = _range_id_45755::End;
-                    while _step_id_45763 > 0 and _index_id_45758 <= _end_id_45768 or _step_id_45763 < 0 and _index_id_45758 >= _end_id_45768 {
-                        let index : Int = _index_id_45758;
+                    let _range_id_45771 : Range = 0..Length(array) - 1;
+                    mutable _index_id_45774 : Int = _range_id_45771::Start;
+                    let _step_id_45779 : Int = _range_id_45771::Step;
+                    let _end_id_45784 : Int = _range_id_45771::End;
+                    while _step_id_45779 > 0 and _index_id_45774 <= _end_id_45784 or _step_id_45779 < 0 and _index_id_45774 >= _end_id_45784 {
+                        let index : Int = _index_id_45774;
                         mapped += [mapper(index, array[index])];
-                        _index_id_45758 += _step_id_45763;
+                        _index_id_45774 += _step_id_45779;
                     }
 
                 }
