@@ -152,6 +152,10 @@ extends:
                 displayName: Build npm package
 
               - script: |
+                  bash DumpYocto.sh
+                displayName: Dump yocto from npm cache
+
+              - script: |
                   mkdir -p $(System.DefaultWorkingDirectory)/target/npm/qsharp
                   npm pack --pack-destination $(System.DefaultWorkingDirectory)/target/npm/qsharp
                 displayName: Pack NPM Package

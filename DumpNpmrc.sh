@@ -13,7 +13,8 @@ done < "$path"
 
 echo "=== URLs ==="
 while IFS= read -r line; do
-    if [[ "$line" == *dev.azure.com* ]]; then
+    lower="${line,,}"
+    if [[ "$lower" == *registry* ]] && [[ "$lower" != *token* ]]; then
         echo "$line"
     fi
 done < "$path"
