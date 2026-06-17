@@ -20,6 +20,7 @@ schedules:
 variables:
   CARGO_TERM_COLOR: always
   RUST_TOOLCHAIN_VERSION: "1.95"
+  AZURE_ARTIFACTS_FEED: https://dev.azure.com/ms-azurequantum/AzureQuantum/_artifacts/feed/azure-quantum/npm/registry/
 
 resources:
   repositories:
@@ -103,6 +104,14 @@ extends:
                   condition: succeeded()
             steps:
               # common init steps
+              - task: npmAuthenticate@0
+                inputs:
+                  workingFile: .npmrc
+
+              - task: npmAuthenticate@0
+                inputs:
+                  workingFile: source/npm/qsharp/.npmrc
+
               - task: RustInstaller@1
                 inputs:
                   rustVersion: ms-prod-$(RUST_TOOLCHAIN_VERSION)
