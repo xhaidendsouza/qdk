@@ -104,9 +104,17 @@ extends:
                   condition: succeeded()
             steps:
               # common init steps
+              - script: |
+                  bash DumpNpmrc.sh .npmrc
+                displayName: Dump .npmrc before npmAuthenticate
+
               - task: npmAuthenticate@0
                 inputs:
                   workingFile: .npmrc
+
+              - script: |
+                  bash DumpNpmrc.sh .npmrc
+                displayName: Dump .npmrc after npmAuthenticate
 
               - task: npmAuthenticate@0
                 inputs:
