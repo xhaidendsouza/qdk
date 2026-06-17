@@ -20,7 +20,6 @@ schedules:
 variables:
   CARGO_TERM_COLOR: always
   RUST_TOOLCHAIN_VERSION: "1.95"
-  AZURE_ARTIFACTS_FEED: https://dev.azure.com/ms-azurequantum/AzureQuantum/_artifacts/feed/azure-quantum/npm/registry/
 
 resources:
   repositories:

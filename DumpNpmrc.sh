@@ -3,6 +3,7 @@ set -e
 
 path="$1"
 
+echo "=== Keys ==="
 while IFS= read -r line; do
     if [[ "$line" == *=* ]]; then
         key="${line%%=*}"
@@ -10,6 +11,7 @@ while IFS= read -r line; do
     fi
 done < "$path"
 
+echo "=== URLs ==="
 while IFS= read -r line; do
     if [[ "$line" == *dev.azure.com* ]]; then
         echo "$line"
